@@ -3,8 +3,6 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const util = require('util');
-
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 const readFileAsync = util.promisify(fs.readFile);
@@ -18,8 +16,6 @@ app.use(express.static(__dirname + '/public'));
 app.get("/notes", (req,res)=>{
     res.sendFile(path.join(__dirname, "public/notes.html"));
 });
-
-
 app.get("/api/notes", (req,res)=>{
 
     readFileAsync("./db/db.json", "utf8")
@@ -93,8 +89,6 @@ app.use(function (req, res, next) {
 app.listen(PORT, function(){
     console.log(`Listening on PORT ${PORT}`);
 });
-
-
 function getLastIndex(data){
     if (data.length > 0) return data[data.length-1].id;
     return 0;
