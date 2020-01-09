@@ -63,14 +63,14 @@ app.post("/api/notes", (req,res)=>{
 app.delete('/api/notes/:id', (req,res)=>{
     
     let id = req.params.id;
-    //read our notes    
+      
     readFileAsync("./db/db.json", "utf8")
     .then((result, err)=>{
         if(err) console.log(err);
         return Promise.resolve(JSON.parse(result));               
     })
     .then(data =>{
-        //removing the entry from the read data         
+             
         data.splice(data.indexOf(data.find(element => element.id == id)),1);
         return Promise.resolve(data);
     })
