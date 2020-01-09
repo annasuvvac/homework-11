@@ -45,7 +45,7 @@ app.post("/api/notes", (req,res)=>{
     .then(data =>{
      
         newNote.id = getLastIndex(data) + 1;
-        //add the entry to the list
+        
         (data.length > 0)? data.push(newNote):data = [newNote];
         return Promise.resolve(data);
     })
