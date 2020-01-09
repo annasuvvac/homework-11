@@ -36,14 +36,14 @@ app.get("*", (req,res)=>{
 //save note
 app.post("/api/notes", (req,res)=>{
     let newNote = req.body;
-    //get our notes
+   
     readFileAsync("./db/db.json", "utf8")
     .then((result, err)=>{
         if(err) console.log(err);
         return Promise.resolve(JSON.parse(result));               
     })
     .then(data =>{
-        //get the next index
+     
         newNote.id = getLastIndex(data) + 1;
         //add the entry to the list
         (data.length > 0)? data.push(newNote):data = [newNote];
