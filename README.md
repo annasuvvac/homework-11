@@ -10,4 +10,6 @@ install the required packages via "npm install" in the root directory (location 
 # Usage
 User can select to view existing notes or use the "pencil" icon to create a new note and save it using the "save" icon.
 
-deployment URL:
+# screenshots
+
+<img src="assets/images/screen.png">
