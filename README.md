@@ -12,4 +12,4 @@ User can select to view existing notes or use the "pencil" icon to create a new 
 
 # screenshots
 
-<img src="assets/images/screen.png">
+<img src="public/assets/images/screen.png">
